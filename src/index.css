@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=Montserrat:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ===== LUXURY DESIGN SYSTEM — SHAH's Lead Generation ===== */
+
+@layer base {
+  :root {
+    /* Core Surfaces */
+    --background: 220 22% 4%;
+    --foreground: 40 25% 91%;
+
+    --card: 220 20% 6%;
+    --card-foreground: 40 25% 91%;
+
+    --popover: 220 20% 6%;
+    --popover-foreground: 40 25% 91%;
+
+    /* Gold Primary */
+    --primary: 43 68% 52%;
+    --primary-foreground: 220 22% 4%;
+
+    --secondary: 220 15% 10%;
+    --secondary-foreground: 40 25% 91%;
+
+    --muted: 220 15% 10%;
+    --muted-foreground: 220 10% 52%;
+
+    --accent: 43 68% 52%;
+    --accent-foreground: 220 22% 4%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 40 25% 91%;
+
+    --border: 43 30% 20%;
+    --input: 220 18% 7%;
+    --ring: 43 68% 52%;
+
+    --radius: 0.5rem;
+
+    /* Luxury Custom Tokens */
+    --gold: 43 68% 52%;
+    --gold-light: 43 75% 70%;
+    --gold-dim: 43 45% 35%;
+    --gold-glow: 43 80% 60%;
+    --charcoal: 220 22% 4%;
+    --charcoal-mid: 220 18% 7%;
+    --charcoal-light: 220 14% 12%;
+    --cream: 40 25% 91%;
+
+    /* Badge Colors */
+    --badge-high: 142 60% 45%;
+    --badge-medium: 217 70% 55%;
+    --badge-low: 220 10% 45%;
+    --badge-contacted: 43 68% 52%;
+    --badge-responded: 142 60% 45%;
+    --badge-not-contacted: 220 10% 45%;
+
+    /* Gradients */
+    --gradient-gold: linear-gradient(135deg, hsl(43 68% 45%), hsl(43 80% 62%), hsl(38 60% 42%));
+    --gradient-dark: linear-gradient(180deg, hsl(220 22% 4%) 0%, hsl(220 25% 6%) 100%);
+    --gradient-brand: linear-gradient(90deg, hsl(43 60% 42%), hsl(43 80% 65%), hsl(43 60% 42%));
+
+    /* Shadows */
+    --shadow-gold: 0 0 40px -10px hsl(43 68% 52% / 0.45);
+    --shadow-input: 0 4px 24px -4px hsl(220 30% 2% / 0.7);
+    --shadow-card: 0 8px 40px -8px hsl(220 30% 2% / 0.8);
+
+    /* Sidebar (keep defaults) */
+    --sidebar-background: 220 22% 4%;
+    --sidebar-foreground: 40 25% 91%;
+    --sidebar-primary: 43 68% 52%;
+    --sidebar-primary-foreground: 220 22% 4%;
+    --sidebar-accent: 220 15% 10%;
+    --sidebar-accent-foreground: 40 25% 91%;
+    --sidebar-border: 43 30% 20%;
+    --sidebar-ring: 43 68% 52%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Montserrat', sans-serif;
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    overflow-x: hidden;
+  }
+}
+
+/* ===== LUXURY ANIMATIONS ===== */
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes goldShimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+@keyframes pulseGold {
+  0%, 100% { box-shadow: 0 0 0 0 hsl(43 68% 52% / 0); }
+  50%       { box-shadow: 0 0 30px 6px hsl(43 68% 52% / 0.3); }
+}
+
+@keyframes lineExpand {
+  from { width: 0; opacity: 0; }
+  to   { width: 100%; opacity: 1; }
+}
+
+@keyframes successPop {
+  0%   { transform: scale(0.8); opacity: 0; }
+  70%  { transform: scale(1.05); }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+/* ===== UTILITY CLASSES ===== */
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.animate-fade-in {
+  animation: fadeIn 1s ease-out forwards;
+}
+
+.delay-200  { animation-delay: 0.2s; }
+.delay-400  { animation-delay: 0.4s; }
+.delay-600  { animation-delay: 0.6s; }
+.delay-800  { animation-delay: 0.8s; }
+.delay-1000 { animation-delay: 1s; }
+
+.opacity-0-init { opacity: 0; }
+
